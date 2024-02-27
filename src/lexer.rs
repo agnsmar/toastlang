@@ -20,6 +20,17 @@ impl Lexer {
     pub fn next_token(&mut self) -> TokenType {
         todo!()
     }
+
+    fn read_char(&mut self) {
+        if self.read_position >= self.input.len() {
+            self.ch = 0
+        } else {
+            self.ch = self.input[self.read_position]
+        }
+
+        self.position = self.read_position;
+        self.read_position += 1;
+    }
 }
 
 #[cfg(test)]
