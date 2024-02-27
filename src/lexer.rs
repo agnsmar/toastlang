@@ -21,7 +21,20 @@ impl Lexer {
     }
 
     pub fn next_token(&mut self) -> TokenType {
-        todo!()
+        let token = match self.ch {
+            b'=' => TokenType::ASSIGN,
+            b';' => TokenType::SEMICOLON,
+            b'(' => TokenType::LPAREN,
+            b')' => TokenType::RPAREN,
+            b',' => TokenType::COMMA,
+            b'+' => TokenType::PLUS,
+            b'{' => TokenType::LBRACE,
+            b'}' => TokenType::RBRACE,
+            0 => TokenType::EOF,
+            _ => TokenType::ILLEGAL,
+        };
+        self.read_char();
+        token
     }
 
     fn read_char(&mut self) {
