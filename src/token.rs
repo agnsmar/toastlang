@@ -1,8 +1,3 @@
-pub struct Token<'a> {
-    pub _type: TokenType,
-    pub literal: &'a str,
-}
-
 #[derive(Debug, PartialEq)]
 pub enum TokenType {
     ILLEGAL,
