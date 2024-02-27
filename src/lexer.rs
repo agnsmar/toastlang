@@ -9,12 +9,15 @@ pub struct Lexer {
 
 impl Lexer {
     pub fn new(input: String) -> Lexer {
-        Lexer {
+        let mut lexer = Lexer {
             input: input.into(),
             position: 0,
             read_position: 0,
             ch: 0,
-        }
+        };
+
+        lexer.read_char();
+        lexer
     }
 
     pub fn next_token(&mut self) -> TokenType {
