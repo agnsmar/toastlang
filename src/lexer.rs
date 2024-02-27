@@ -1,10 +1,20 @@
 use crate::token::TokenType;
 
-pub struct Lexer {}
+pub struct Lexer {
+    input: String,
+    position: usize,
+    read_position: usize,
+    ch: u8,
+}
 
 impl Lexer {
     pub fn new(input: String) -> Lexer {
-        Lexer {}
+        Lexer {
+            input,
+            position: 0,
+            read_position: 0,
+            ch: 0,
+        }
     }
 
     pub fn next_token(&mut self) -> TokenType {
