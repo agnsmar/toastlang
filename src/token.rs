@@ -3,6 +3,7 @@ pub struct Token<'a> {
     pub literal: &'a str,
 }
 
+#[derive(Debug, PartialEq)]
 pub enum TokenType {
     ILLEGAL,
     EOF,
