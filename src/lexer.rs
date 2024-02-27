@@ -1,7 +1,7 @@
 use crate::token::TokenType;
 
 pub struct Lexer {
-    input: String,
+    input: Vec<u8>,
     position: usize,
     read_position: usize,
     ch: u8,
@@ -10,7 +10,7 @@ pub struct Lexer {
 impl Lexer {
     pub fn new(input: String) -> Lexer {
         Lexer {
-            input,
+            input: input.into(),
             position: 0,
             read_position: 0,
             ch: 0,
