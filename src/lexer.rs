@@ -64,6 +64,7 @@ mod tests {
             TokenType::LPAREN,
             TokenType::RPAREN,
             TokenType::LBRACE,
+            TokenType::RBRACE,
             TokenType::COMMA,
             TokenType::SEMICOLON,
             TokenType::EOF,
